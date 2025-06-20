@@ -1,16 +1,19 @@
-const express = require("express");
+import express from "express";
+import Student from "../DB/student.js";
+import "../DB/config.js";
 const router = express.Router();
-require("../DB/student");
-require("../DB/config");
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
+    try {
+        console.log(req.body);
 
-    console.log(req.body);
-
-    const { name, lastName, phone, email, password } = req.body;
-    const student = new studentModel({ name, lastName, phone, email, password });
-    student.save();
-    res.status(201).json({ message: "Student created successfully" });
+        const { name, lastName, phone, email, password } = req.body;
+        const newStudent = new Student({ name, lastName, phone, email, password });
+        await newStudent.save();
+        res.status(201).json({ message: "Student created successfully" });
+    } catch (error) {
+        res.status(500).json({ error: "Failed to create student" });
+    }
 });
 
-module.exports = router;
+export default router;

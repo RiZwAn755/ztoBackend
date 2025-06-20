@@ -1,5 +1,8 @@
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 const URL = process.env.MONGO_URL;
 
 mongoose.connect(URL);
