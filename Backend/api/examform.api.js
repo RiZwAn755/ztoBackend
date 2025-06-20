@@ -1,3 +1,5 @@
+// api to submit exam form
+
 import express from "express";
 import Registrations from "../DB/examForm.js";
 import "../DB/config.js";

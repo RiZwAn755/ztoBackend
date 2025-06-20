@@ -1,3 +1,4 @@
+// api for admin signup
 import express from "express";
 import Admin from "../DB/admin.js";
 import "../DB/config.js";

@@ -1,3 +1,5 @@
+// api to get all students
+
 import express from "express";
 import Student from "../DB/student.js";
 const router = express.Router();

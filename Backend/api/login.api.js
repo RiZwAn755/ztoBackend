@@ -1,3 +1,5 @@
+// api for student  login, not registered students
+
 import express from "express";
 import Student from "../DB/student.js";
 const router = express.Router();

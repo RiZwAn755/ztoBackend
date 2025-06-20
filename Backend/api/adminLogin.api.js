@@ -1,3 +1,5 @@
+// api for admin login
+
 import express from "express";
 import Admin from "../DB/admin.js";
 const router = express.Router();

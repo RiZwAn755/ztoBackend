@@ -1,22 +1,17 @@
+// api to get registered students
 
 import express from "express";
-import "../DB/examForm";
-import examForm from "../DB/examForm";
+import examForm from "../DB/examForm.js";
+
 const router = express.Router();
 
-router.get("/" , (req , resp) =>{
-
-     const regitered_students = examForm.find();
-
-     if(!regitered_students)
-     {
-        resp.send("unable to fetch");
-     }
-     else 
-     {
-        resp.send(regitered_students);
-     }
-
+router.get("/", async (req, resp) => {
+    try {
+        const registered_students = await examForm.find();
+        resp.send(registered_students);
+    } catch (error) {
+        resp.status(500).send("Unable to fetch");
+    }
 });
 
 export default router;
