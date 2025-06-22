@@ -8,7 +8,7 @@ const studentSchema = new mongoose.Schema({
 
   school: { type: String, required: [true, "School/coaching name is required"] },
 
-  class:{type:Number, required : true},
+  classs:{type:Number, required : true},
   email: { type: String },
   
   password: { type: String, required: [true, "Password is required"], minlength: 8 }

@@ -9,8 +9,8 @@ router.post("/", async (req, res) => {
     try {
         console.log(req.body);
 
-        const { name, lastName, phone, email, password } = req.body;
-        const newStudent = new Student({ name, lastName, phone, email, password });
+        const { name, lastName, phone, email, password , classs , school } = req.body;
+        const newStudent = new Student({ name, lastName, phone, email, password,classs , school });
         await newStudent.save();
         res.status(201).json({ message: "Student created successfully" });
     } catch (error) {
