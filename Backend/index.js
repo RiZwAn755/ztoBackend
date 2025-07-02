@@ -13,11 +13,6 @@ import "./DB/config.js";
 
 const app = express();
 
-app.get("/" , (req , resp) => {
-
-    resp.send("hello");
-})
-
 app.use(express.json());
 app.use(cors());
 
