@@ -1,4 +1,4 @@
-// api for student  login, not registered students
+// api for student  login
 
 import express from "express";
 import Student from "../DB/student.js";
